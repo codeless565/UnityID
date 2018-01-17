@@ -19,13 +19,13 @@ public class PlayerMovement : MonoBehaviour
 
     protected void Awake()
     {
-        Debug.Log("Awake");
+       // Debug.Log("Awake");
     }
 
     // Use this for initialization
     protected void Start ()
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         yAxis = new Vector3(0, 1, 0);
         targetScript = UIObj.GetComponent<JoyControl>();
     }
@@ -63,13 +63,13 @@ public class PlayerMovement : MonoBehaviour
 
     protected void LateUpdate()
     {
-        Debug.Log("LateUpdate");
+        //Debug.Log("LateUpdate");
     }
 
     public void Move()
     {
-        Vector3 targetDir = targetScript.direction;
-        Debug.Log(targetDir);
+         //Debug.Log(targetDir);
+       Vector3 targetDir = targetScript.direction;
 
         Vector3 newDir = Vector3.RotateTowards(transform.forward,
                             new Vector3(targetDir.x, 0.0f, targetDir.y),
