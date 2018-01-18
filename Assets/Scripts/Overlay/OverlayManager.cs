@@ -29,6 +29,7 @@ public class OverlayManager : MonoBehaviour
     [SerializeField]
     GameObject Setting;
 
+
     //Boolean for overlays
     bool b_mapOpen;
     bool b_playerOpen;
@@ -39,6 +40,7 @@ public class OverlayManager : MonoBehaviour
     bool b_communityOpen;
     bool b_questOpen;
     bool b_settingOpen;
+
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +54,7 @@ public class OverlayManager : MonoBehaviour
         b_communityOpen = false;
         b_questOpen = false;
         b_settingOpen = false;
+ 
     }
 
     // Update is called once per frame
@@ -172,5 +175,4 @@ public class OverlayManager : MonoBehaviour
         Debug.Log("Setting_Closed");
         b_settingOpen = false;
     }
-
 }
