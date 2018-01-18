@@ -15,9 +15,6 @@ public class JoyControl : MonoBehaviour {
     [SerializeField]
     GameObject joyObj;
 
-    [SerializeField]
-    Camera UICamera;
-
     // Use this for initialization
     void Start () {
         joyBG = joyObj.GetComponent<Image>();
@@ -44,28 +41,28 @@ public class JoyControl : MonoBehaviour {
 
     public void InitialPos()
     {
-#if UNITY_EDITOR
-        startPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
+        #if UNITY_EDITOR
+                startPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
 
-#elif UNITY_ANDROID || UNITY_IOS
-        Touch myTouch = Input.GetTouch(0);
-        startPosition = new Vector3(myTouch.position.x, myTouch.position.y);
-#else
-         startPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
-#endif
+        #elif UNITY_ANDROID || UNITY_IOS
+                Touch myTouch = Input.GetTouch(0);
+                startPosition = new Vector3(myTouch.position.x, myTouch.position.y);
+        #else
+                 startPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
+        #endif
     }
 
     public void Dragging()
     {
 
-#if UNITY_EDITOR || UNITY_WINDOWS
-        Vector2 tempPosition = new Vector2(Input.mousePosition.x - startPosition.x, Input.mousePosition.y - startPosition.y);
+        #if UNITY_EDITOR || UNITY_WINDOWS
+                Vector2 tempPosition = new Vector2(Input.mousePosition.x - startPosition.x, Input.mousePosition.y - startPosition.y);
 
-#elif UNITY_ANDROID || UNITY_IOS
-        Touch mytouch = Input.GetTouch(0);
-        Vector3 newPosition = new Vector3(mytouch.position.x - startPosition.x, mytouch.position.y - startPosition.y, 1);
+        #elif UNITY_ANDROID || UNITY_IOS
+                Touch mytouch = Input.GetTouch(0);
+                Vector3 newPosition = new Vector3(mytouch.position.x - startPosition.x, mytouch.position.y - startPosition.y, 1);
 
-#endif
+        #endif
         float radius = 50;
         Vector2 clampPos = Vector2.ClampMagnitude(new Vector2(tempPosition.x, tempPosition.y), radius);
         Vector3 newPosition = new Vector3(clampPos.x, clampPos.y, 1);

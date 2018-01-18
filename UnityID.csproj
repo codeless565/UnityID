@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\Controls\JoyControl.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerFire.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Controls\SkillControl.cs" />
     <Compile Include="Assets\Scripts\Controls\UIScript.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
