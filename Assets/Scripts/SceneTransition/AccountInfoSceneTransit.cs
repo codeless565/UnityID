@@ -18,7 +18,10 @@ public class AccountInfoSceneTransit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         AccountTab.SetActive(b_accountOpen);
-	}
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+            Application.Quit();
+    }
 
     //SceneManager.LoadScene("Game");
     public void ToAccount()
@@ -28,11 +31,9 @@ public class AccountInfoSceneTransit : MonoBehaviour {
     public void ToSelectCharacter() { SceneManager.LoadScene("SelectCharacter"); }
     public void ToOptions() { Debug.Log("To Options"); }
     public void ToExit() {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            if (Application.platform == RuntimePlatform.Android)
-                Application.Quit();
-        }
+        if (Application.platform == RuntimePlatform.Android)
+            Application.Quit();
+
     }
 
     public void accountOpen()
@@ -45,4 +46,7 @@ public class AccountInfoSceneTransit : MonoBehaviour {
         Debug.Log("Account Information Tab Closed");
         b_accountOpen = false;
     }
+
+    //Cheat to Game
+    public void ToGame() { SceneManager.LoadScene("Game"); }
 }
