@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SkillControl : MonoBehaviour
 {
     [SerializeField]
-    public Text printOut;
+    GameObject Player;
 
     [SerializeField]
     GameObject SkillControllerObj;
@@ -15,8 +15,12 @@ public class SkillControl : MonoBehaviour
     GameObject SkillLoadoutDisplay;
 
     [SerializeField]
-    GameObject NormalAttackObject;
+    GameObject NormalAttackGameObject;
     
+    public GameObject SkillFirst;
+    public GameObject SkillSecond;
+
+
     private Image skillBG;
     private Image skillFG;
     public Vector3 direction;
@@ -30,6 +34,10 @@ public class SkillControl : MonoBehaviour
     void Start () {
         skillBG = SkillControllerObj.GetComponent<Image>();
         skillFG = SkillControllerObj.transform.GetChild(0).GetComponent<Image>();
+
+        //Add skill
+        SkillFirst.AddComponent<SkillExplosion>();
+        SkillSecond.AddComponent<SkillComet>();
 
         startPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
     }
@@ -108,16 +116,18 @@ public class SkillControl : MonoBehaviour
     private void BasicAttack()
     {
         //Call object and find script to call script's function
-        NormalAttackObject.GetComponent<PlayerFire>().Fire();
+        NormalAttackGameObject.GetComponent<PlayerFire>().Fire();
     }
 
     //Skill Activation
     private void SkillCall_Up()
     {
+        SkillFirst.GetComponent<SkillBase>().SkillCall();
     }
 
     private void SkillCall_Right()
     {
+        SkillSecond.GetComponent<SkillBase>().SkillCall();
     }
 
     private void SkillCall_Down()

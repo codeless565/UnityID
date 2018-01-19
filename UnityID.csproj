@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
+    <Compile Include="Assets\Scripts\CometMovement.cs" />
     <Compile Include="Assets\Scripts\Controls\JoyControl.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerFire.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerMovement.cs" />
@@ -90,11 +91,14 @@
     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
     <Compile Include="Assets\Scripts\EnemySpeed.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\Scripts\Overlay\Overlay_Communications.cs" />
     <Compile Include="Assets\Scripts\Overlay\OverlayManager.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Chat.cs" />
+    <Compile Include="Assets\Scripts\Overlay\Overlay_Communications.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Map.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Player.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillBase.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillExplosion.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillComet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

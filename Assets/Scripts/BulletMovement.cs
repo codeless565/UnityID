@@ -26,7 +26,7 @@ public class BulletMovement : MonoBehaviour {
 
         Health healthscript = other.GetComponent<Health>();
 
-        if(healthscript != null)
+        if(healthscript != null || other.gameObject == GameObject.Find("Floor"))
         {
             ParticleSystem thisExplosion = Instantiate(Explosion, transform.position, Quaternion.identity);
             thisExplosion.Play();
