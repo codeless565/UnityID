@@ -27,8 +27,8 @@ public class SkillControl : MonoBehaviour
     Vector3 startPosition;
     Vector3 liftPosition;
 
-    float NormalAttackLimit = 60;
-    float DragLimit = 100;
+    float NormalAttackLimit = 100;
+    float DragLimit = 200;
 
     // Use this for initialization
     void Start () {
@@ -62,17 +62,19 @@ public class SkillControl : MonoBehaviour
 
     public void Dragging()
     {
+        
         #if UNITY_EDITOR || UNITY_WINDOWS
                 Vector2 tempPosition = new Vector2(Input.mousePosition.x - startPosition.x, Input.mousePosition.y - startPosition.y);
 
         #elif UNITY_ANDROID || UNITY_IOS
                 Touch mytouch = Input.GetTouch(0);
-                Vector3 newPosition = new Vector3(mytouch.position.x - startPosition.x, mytouch.position.y - startPosition.y, 1);
+                Vector3 tempPosition = new Vector3(mytouch.position.x - startPosition.x, mytouch.position.y - startPosition.y, 1);
+
         #endif
 
         Vector2 clampPos = Vector2.ClampMagnitude(new Vector2(tempPosition.x, tempPosition.y), DragLimit);
         liftPosition = new Vector3(clampPos.x, clampPos.y, 1);
-
+        
         skillFG.rectTransform.localPosition = liftPosition;
         direction = skillFG.rectTransform.localPosition;
 

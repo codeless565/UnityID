@@ -11,6 +11,7 @@ public class JoyControl : MonoBehaviour {
     private Image joyBG;
     public Vector3 direction;
     Vector3 startPosition;
+    float radius = 100;
 
     [SerializeField]
     GameObject joyObj;
@@ -54,18 +55,18 @@ public class JoyControl : MonoBehaviour {
 
     public void Dragging()
     {
+        Vector3 newPosition;
 
         #if UNITY_EDITOR || UNITY_WINDOWS
                 Vector2 tempPosition = new Vector2(Input.mousePosition.x - startPosition.x, Input.mousePosition.y - startPosition.y);
 
         #elif UNITY_ANDROID || UNITY_IOS
                 Touch mytouch = Input.GetTouch(0);
-                Vector3 newPosition = new Vector3(mytouch.position.x - startPosition.x, mytouch.position.y - startPosition.y, 1);
-
+                Vector2 tempPosition = new Vector3(mytouch.position.x - startPosition.x, mytouch.position.y - startPosition.y, 1);
         #endif
-        float radius = 50;
+
         Vector2 clampPos = Vector2.ClampMagnitude(new Vector2(tempPosition.x, tempPosition.y), radius);
-        Vector3 newPosition = new Vector3(clampPos.x, clampPos.y, 1);
+        newPosition = new Vector3(clampPos.x, clampPos.y, 1);
 
         joyFG.rectTransform.localPosition = newPosition;
         direction = joyFG.rectTransform.localPosition;

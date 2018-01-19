@@ -9,6 +9,7 @@ public class SkillComet : MonoBehaviour, SkillBase
 
     // Use this for initialization
     void Start () {
+      
         Comet = (GameObject)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Comet.prefab", typeof(GameObject));
     }
 
