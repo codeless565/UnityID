@@ -19,9 +19,4 @@ public class SceneTransit : MonoBehaviour {
         SceneManager.LoadScene("Game");
     }
     public void ToOptions() { }
-    public void ToHighScore() { }
-
-    public void OpenCanvas()
-    {
-    }
 }

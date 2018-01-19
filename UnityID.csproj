@@ -94,7 +94,9 @@
     <Compile Include="Assets\Scripts\Overlay\Overlay_Communications.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Map.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Player.cs" />
-    <Compile Include="Assets\Scripts\SceneTransit.cs" />
+    <Compile Include="Assets\Scripts\SceneTransition\AccountInfoSceneTransit.cs" />
+    <Compile Include="Assets\Scripts\SceneTransition\LoginSceneTransit.cs" />
+    <Compile Include="Assets\Scripts\SceneTransition\SceneTransit.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillBase.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillComet.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillExplosion.cs" />
