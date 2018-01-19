@@ -7,9 +7,9 @@ public class SkillExplosion : MonoBehaviour, SkillBase
 {
     public GameObject Explosion;
 
-	// Use this for initialization
-	void Start () {
-        Explosion = (GameObject)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Skill_Explosion.prefab", typeof(GameObject)); ;
+    // Use this for initialization
+    void Awake () {
+        Explosion = GameObject.Find("Player").GetComponentInChildren<PrefabHolder>().ExplosionSkill;
     }
 
     // Update is called once per frame

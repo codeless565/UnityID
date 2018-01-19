@@ -19,11 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     protected void Awake()
     {
-       // Debug.Log("Awake");
+        // Debug.Log("Awake");
     }
 
     // Use this for initialization
-    protected void Start ()
+    protected void Start()
     {
         //Debug.Log("Start");
         yAxis = new Vector3(0, 1, 0);
@@ -31,11 +31,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    protected void Update ()
+    protected void Update()
     {
-        Move();
-        //Debug.Log("Update");
-
+#if UNITY_EDITOR || UNITY_WINDOWS
         //WASD Movement
         if (Input.GetKey(KeyCode.W))
         {
@@ -57,8 +55,10 @@ public class PlayerMovement : MonoBehaviour
             //transform.position = new Vector3(transform.position.x + movementSpeed, transform.position.y, transform.position.z);
             transform.position += transform.right * movementSpeed * Time.deltaTime;
         }
-        //Rotation Movement
-        //transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * Time.deltaTime * 180);
+#elif UNITY_ANDROID || UNITY_IOS
+#else
+#endif
+        Rotate();
     }
 
     protected void LateUpdate()
@@ -66,10 +66,9 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("LateUpdate");
     }
 
-    public void Move()
+    public void Rotate()
     {
-         //Debug.Log(targetDir);
-       Vector3 targetDir = targetScript.direction;
+        Vector3 targetDir = targetScript.direction;
 
         Vector3 newDir = Vector3.RotateTowards(transform.forward,
                             new Vector3(targetDir.x, 0.0f, targetDir.y),
@@ -77,7 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
 
         transform.rotation = Quaternion.LookRotation(newDir);
+    }
 
-        //transform.position += transform.forward * movementSpeed * Time.deltaTime;
+    public void Move()
+    {
+        transform.position += transform.forward * movementSpeed * Time.deltaTime;
     }
 }

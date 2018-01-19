@@ -5,12 +5,11 @@ using UnityEngine;
 public class SkillComet : MonoBehaviour, SkillBase
 {
     public GameObject Comet;
-    GameObject player;
 
     // Use this for initialization
-    void Start () {
+    void Awake() {
       
-        Comet = (GameObject)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Comet.prefab", typeof(GameObject));
+        Comet = GameObject.Find("Player").GetComponentInChildren<PrefabHolder>().CometSkill;
     }
 
     // Update is called once per frame

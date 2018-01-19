@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\Overlay\Overlay_Communications.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Map.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Player.cs" />
+    <Compile Include="Assets\Scripts\PrefabHolder.cs" />
     <Compile Include="Assets\Scripts\SceneTransit.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillBase.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillComet.cs" />

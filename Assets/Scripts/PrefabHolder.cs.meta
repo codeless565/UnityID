@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 92e5c4e1b1e0a0a45a53db259e99c298
+timeCreated: 1516349807
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ExplosionSkill: {fileID: 1726976209137684, guid: 7bfef882a897cc64fb7aab50115c1c65,
+      type: 2}
+  - CometSkill: {fileID: 1862567732041290, guid: a4843e14c5e614f489c3617d81c48120,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
