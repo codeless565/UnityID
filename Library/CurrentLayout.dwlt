@@ -119,7 +119,11 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 342}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 101
+=======
+  controlID: 144
+>>>>>>> master
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -359,9 +363,15 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 86260000
     m_LastClickedID: 9862
     m_ExpandedIDs: 000000003626000072260000a226000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: f0240000
+    m_LastClickedID: 9456
+    m_ExpandedIDs: 00000000cc2400000a2500004a25000000ca9a3bffffff7f
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +399,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000003626000072260000a2260000
+=======
+    m_ExpandedIDs: 00000000cc2400000a2500004a250000
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -505,9 +519,15 @@ MonoBehaviour:
     height: 614
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 4c0efbff200ffbffec0ffbfff40ffbff1ae6fefff8e6feffc4e7feffcce7feff1efaffff0000000088270000382800004c290000e46300003e640000a4640000266500003a6600005a660000b0670000
+=======
+    m_SelectedIDs: a6100100
+    m_LastClickedID: 0
+    m_ExpandedIDs: b0bcf9ff16c3f9ffecc7f9ffe6c8f9fff0f3f9ff9efbf9ff6a51faff7e55faffc45bfaff705ffaffe060faffc2f6faff4ef8faffc6fcfafff2fdfaffd6fffaff0a01fbff3202fbff2c03fbff762cfbff122efbffe4fbffff00000000b22600000c2700009c270000e627000086280000542900007a290000942a00008a100100781a0100c61e0100
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -526,7 +546,11 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
+<<<<<<< HEAD
   - Game
+=======
+  - Login
+>>>>>>> master
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -557,14 +581,24 @@ MonoBehaviour:
     width: 1224
     height: 927
   m_SceneLighting: 1
+<<<<<<< HEAD
   lastFramingTime: 21.41194628455079
+=======
+  lastFramingTime: 3648.2223938168695
+>>>>>>> master
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 611.99994, y: 455, z: 0}
     speed: 2
     m_Value: {x: 611.99994, y: 455, z: 0}
+=======
+    m_Target: {x: 482.51358, y: 245.94461, z: 100}
+    speed: 2
+    m_Value: {x: 482.51358, y: 245.94461, z: 100}
+>>>>>>> master
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -591,9 +625,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 793.45166
     speed: 2
     m_Value: 793.45166
+=======
+    m_Target: 9.177499
+    speed: 2
+    m_Value: 9.177499
+>>>>>>> master
   m_Ortho:
     m_Target: 1
     speed: 2

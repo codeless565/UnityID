@@ -7,9 +7,17 @@ public class Overlay_Communications : MonoBehaviour {
     [SerializeField]
     GameObject Buddy;
     [SerializeField]
+    GameObject BuddyButton;
+
+    [SerializeField]
     GameObject Party;
     [SerializeField]
+    GameObject PartyButton;
+
+    [SerializeField]
     GameObject Guild;
+    [SerializeField]
+    GameObject GuildButton;
 
     [SerializeField]
     GameObject BuddyOnline;
@@ -42,6 +50,9 @@ public class Overlay_Communications : MonoBehaviour {
     bool b_buddyaddOpen;
     bool b_guildaddOpen;
 
+    public Color ButtonActiveColour = Color.red;
+    public Color ButtonInactiveColour = Color.cyan;
+
     // Use this for initialization
     void Start ()
     {
@@ -55,6 +66,10 @@ public class Overlay_Communications : MonoBehaviour {
         b_guildofflineOpen = false;
         b_buddyaddOpen = false;
         b_guildaddOpen = false;
+
+        BuddyButton.GetComponent<Image>().color = ButtonActiveColour;
+        PartyButton.GetComponent<Image>().color = ButtonInactiveColour;
+        GuildButton.GetComponent<Image>().color = ButtonInactiveColour;
     }
 	
 	// Update is called once per frame
@@ -70,6 +85,23 @@ public class Overlay_Communications : MonoBehaviour {
 
         BuddyAdd.SetActive(b_buddyaddOpen);
         GuildAdd.SetActive(b_guildaddOpen);
+
+
+
+        if (b_buddyOpen)
+            BuddyButton.GetComponent<Image>().color = ButtonActiveColour;
+        else
+            BuddyButton.GetComponent<Image>().color = ButtonInactiveColour;
+
+        if (b_partyOpen)
+            PartyButton.GetComponent<Image>().color = ButtonActiveColour;
+        else
+            PartyButton.GetComponent<Image>().color = ButtonInactiveColour;
+
+        if (b_guildOpen)
+            GuildButton.GetComponent<Image>().color = ButtonActiveColour;
+        else
+            GuildButton.GetComponent<Image>().color = ButtonInactiveColour;
     }
 
     public void ChangeGuildPanel()
@@ -137,6 +169,8 @@ public class Overlay_Communications : MonoBehaviour {
         b_guildOpen = true;
         b_buddyOpen = false;
         b_partyOpen = false;
+
+        b_guildonlineOpen = true;
     }
     public void Guild_Close()
     {
