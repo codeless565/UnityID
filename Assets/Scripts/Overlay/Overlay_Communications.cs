@@ -86,8 +86,6 @@ public class Overlay_Communications : MonoBehaviour {
         BuddyAdd.SetActive(b_buddyaddOpen);
         GuildAdd.SetActive(b_guildaddOpen);
 
-
-
         if (b_buddyOpen)
             BuddyButton.GetComponent<Image>().color = ButtonActiveColour;
         else
