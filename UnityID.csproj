@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
+    <Compile Include="Assets\Scripts\ChatSystem.cs" />
     <Compile Include="Assets\Scripts\CometMovement.cs" />
     <Compile Include="Assets\Scripts\Controls\JoyControl.cs" />
     <Compile Include="Assets\Scripts\Controls\PlayerFire.cs" />

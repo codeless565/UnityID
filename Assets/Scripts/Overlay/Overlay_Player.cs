@@ -1,79 +1,111 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Overlay_Player : MonoBehaviour
 {
-    /* This script is only for Player Menu to pull up Inventory, Stats, Skills, Controls
+    /* This script is only for Player Menu to pull up Inventory, Profile, Skills, Loadout
      * Work Load - Pei Sheng
      */
 
     //Player Display Panels
-    [SerializeField]
-    GameObject InventoryWindow;
-    [SerializeField]
-    GameObject StatsWindow;
-    [SerializeField]
-    GameObject SkillsWindow;
-    [SerializeField]
-    GameObject ControlsWindow;
+    public GameObject InventoryWindow;
+    public GameObject ProfileWindow;
+    public GameObject SkillsWindow;
+    public GameObject LoadoutWindow;
+    public GameObject LoadoutSkillWindow;
+    public GameObject LoadoutItemWindow;
 
-    //Boolean for Buttton
-    bool b_InventoryOpen;
-    bool b_StatsOpen;
-    bool b_SkillsOpen;
-    bool b_ControlsOpen;
+    //Buttons
+    public GameObject InventoryButton;
+    public GameObject ProfileButton;
+    public GameObject SkillsButton;
+    public GameObject LoadoutButton;
+
+    Color ActiveTab = Color.red;
+    Color InactiveTab = Color.cyan;
 
     // Use this for initialization
-    void Start () {
-        b_InventoryOpen = true;
-        b_StatsOpen = false;
-        b_SkillsOpen = false;
-        b_ControlsOpen = false;
+    void Start ()
+    {
+        InventoryWindow_Open();
     }
-	
-	// Update is called once per frame
-	void Update () {
-        InventoryWindow.SetActive(b_InventoryOpen);
-        StatsWindow.SetActive(b_StatsOpen);
-        SkillsWindow.SetActive(b_SkillsOpen);
-        ControlsWindow.SetActive(b_ControlsOpen);
+
+    // Update is called once per frame
+    void Update () {
     }
 
     //Button Control
     public void InventoryWindow_Open()
     {
-        Debug.Log("Inventory opened");
-        b_InventoryOpen = true;
-        b_StatsOpen = false;
-        b_SkillsOpen = false;
-        b_ControlsOpen = false;
+        InventoryWindow.SetActive(true);
+        ProfileWindow.SetActive(false);
+        SkillsWindow.SetActive(false);
+        LoadoutWindow.SetActive(false);
+
+        InventoryButton.GetComponent<Image>().color = ActiveTab;
+        ProfileButton.GetComponent<Image>().color = InactiveTab;
+        SkillsButton.GetComponent<Image>().color = InactiveTab;
+        LoadoutButton.GetComponent<Image>().color = InactiveTab;
+
+        LoadoutSkill_Open();
     }
 
-    public void StatsWindow_Open()
+    public void ProfileWindow_Open()
     {
-        Debug.Log("Stats opened");
-        b_InventoryOpen = false;
-        b_StatsOpen = true;
-        b_SkillsOpen = false;
-        b_ControlsOpen = false;
+        InventoryWindow.SetActive(false);
+        ProfileWindow.SetActive(true);
+        SkillsWindow.SetActive(false);
+        LoadoutWindow.SetActive(false);
+
+        InventoryButton.GetComponent<Image>().color = InactiveTab;
+        ProfileButton.GetComponent<Image>().color = ActiveTab;
+        SkillsButton.GetComponent<Image>().color = InactiveTab;
+        LoadoutButton.GetComponent<Image>().color = InactiveTab;
+
+        LoadoutSkill_Open();
     }
 
     public void SkillsWindow_Open()
     {
-        Debug.Log("Skills opened");
-        b_InventoryOpen = false;
-        b_StatsOpen = false;
-        b_SkillsOpen = true;
-        b_ControlsOpen = false;
+        InventoryWindow.SetActive(false);
+        ProfileWindow.SetActive(false);
+        SkillsWindow.SetActive(true);
+        LoadoutWindow.SetActive(false);
+
+        InventoryButton.GetComponent<Image>().color = InactiveTab;
+        ProfileButton.GetComponent<Image>().color = InactiveTab;
+        SkillsButton.GetComponent<Image>().color = ActiveTab;
+        LoadoutButton.GetComponent<Image>().color = InactiveTab;
+
+        LoadoutSkill_Open();
     }
 
-    public void ControlsWindow_Open()
+    public void LoadoutWindow_Open()
     {
-        Debug.Log("Controls opened");
-        b_InventoryOpen = false;
-        b_StatsOpen = false;
-        b_SkillsOpen = false;
-        b_ControlsOpen = true;
+        InventoryWindow.SetActive(false);
+        ProfileWindow.SetActive(false);
+        SkillsWindow.SetActive(false);
+        LoadoutWindow.SetActive(true);
+
+        InventoryButton.GetComponent<Image>().color = InactiveTab;
+        ProfileButton.GetComponent<Image>().color = InactiveTab;
+        SkillsButton.GetComponent<Image>().color = InactiveTab;
+        LoadoutButton.GetComponent<Image>().color = ActiveTab;
+
+        LoadoutSkill_Open();
+    }
+
+    public void LoadoutSkill_Open()
+    {
+        LoadoutSkillWindow.SetActive(true);
+        LoadoutItemWindow.SetActive(false);
+    }
+
+    public void LoadoutItem_Open()
+    {
+        LoadoutSkillWindow.SetActive(false);
+        LoadoutItemWindow.SetActive(true);
     }
 }

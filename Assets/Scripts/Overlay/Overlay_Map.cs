@@ -9,6 +9,10 @@ public class Overlay_Map : MonoBehaviour
      * Work Load - Pei Sheng
      */
 
+    public GameObject WorldButton;
+    public GameObject DungeonButton;
+    public GameObject TownButton;
+
     public GameObject WorldTab;
     public GameObject DungeonTab;
     public GameObject TownTab;
@@ -21,8 +25,16 @@ public class Overlay_Map : MonoBehaviour
 
     public GameObject TownDisplay;
 
+    Color ActiveTab = Color.red;
+    Color InactiveTab = Color.cyan;
+
     // Use this for initialization
     void Start () {
+        //Buttons
+        WorldButton.GetComponent<Image>().color = InactiveTab;
+        DungeonButton.GetComponent<Image>().color = InactiveTab;
+        TownButton.GetComponent<Image>().color = InactiveTab;
+
         //Tabs
         WorldTab.SetActive(false);
         DungeonTab.SetActive(false);
@@ -42,6 +54,10 @@ public class Overlay_Map : MonoBehaviour
         DungeonTab.SetActive(false);
         TownTab.SetActive(false);
         TownDisplay.SetActive(false);
+
+        WorldButton.GetComponent<Image>().color = ActiveTab;
+        DungeonButton.GetComponent<Image>().color = InactiveTab;
+        TownButton.GetComponent<Image>().color = InactiveTab;
     }
 
     public void DungeonTab_Open()
@@ -50,6 +66,10 @@ public class Overlay_Map : MonoBehaviour
         DungeonTab.SetActive(true);
         TownTab.SetActive(false);
         TownDisplay.SetActive(false);
+
+        WorldButton.GetComponent<Image>().color = InactiveTab;
+        DungeonButton.GetComponent<Image>().color = ActiveTab;
+        TownButton.GetComponent<Image>().color = InactiveTab;
     }
 
     public void TownTab_Open()
@@ -58,6 +78,10 @@ public class Overlay_Map : MonoBehaviour
         DungeonTab.SetActive(false);
         TownTab.SetActive(true);
         TownDisplay.SetActive(false);
+
+        WorldButton.GetComponent<Image>().color = InactiveTab;
+        DungeonButton.GetComponent<Image>().color = InactiveTab;
+        TownButton.GetComponent<Image>().color = ActiveTab;
     }
 
     public void Town1_View()
