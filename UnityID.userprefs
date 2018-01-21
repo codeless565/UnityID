@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="UnityID.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SceneTransition\AccountInfoSceneTransit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Overlay\Overlay_Options.cs">
     <Files>
       <File FileName="Assets\Scripts\SceneTransition\AccountInfoSceneTransit.cs" Line="13" Column="32" />
+      <File FileName="Assets\Scripts\Overlay\Overlay_Options.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
