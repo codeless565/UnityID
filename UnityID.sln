@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityID", "UnityID.csproj", "{7E0CB52B-FE2A-F384-D9B3-9CECCBB4D8C9}"
 EndProject
 Global

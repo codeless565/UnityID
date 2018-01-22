@@ -29,150 +29,180 @@ public class OverlayManager : MonoBehaviour
     [SerializeField]
     GameObject Setting;
 
-
-    //Boolean for overlays
-    bool b_mapOpen;
-    bool b_playerOpen;
-    bool b_extendedMenu;
-    bool b_extendedButton;
-    bool b_chatOpen;
-    bool b_shopOpen;
-    bool b_communityOpen;
-    bool b_questOpen;
-    bool b_settingOpen;
-
-
 	// Use this for initialization
 	void Start () {
-        b_mapOpen = false;
-        b_playerOpen = false;
-        b_chatOpen = false;
-
-        b_extendedMenu = false;
-        b_extendedButton = true;
-        b_shopOpen = false;
-        b_communityOpen = false;
-        b_questOpen = false;
-        b_settingOpen = false;
  
     }
 
     // Update is called once per frame
     void Update () {
-        Map.SetActive(b_mapOpen);
-        Player.SetActive(b_playerOpen);
-        Chat.SetActive(b_chatOpen);
-
-        //Extended Menu
-        ExtendMenu.SetActive(b_extendedMenu);
-        ExtendButton.SetActive(b_extendedButton);
-
-        Shop.SetActive(b_shopOpen);
-        Community.SetActive(b_communityOpen);
-        Quest.SetActive(b_questOpen);
-        Setting.SetActive(b_settingOpen);
     }
 
     //Map Overlay
     public void Map_Open()
     {
-        Debug.Log("Map_Opened");
-        b_mapOpen = true;
+        Map.SetActive(true);
+        Player.SetActive(false);
+        Chat.SetActive(false);
 
-        //close other opened overlays
-        if (b_chatOpen)
-            b_chatOpen = false;
-        if (b_playerOpen)
-            b_playerOpen = false;
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(false);
+
+        Shop.SetActive(false);
+        Community.SetActive(false);
+        Quest.SetActive(false);
+        Setting.SetActive(false);
     }
     public void Map_Close()
     {
-        Debug.Log("Map_Closed");
-        b_mapOpen = false;
+        Map.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 
     //Player Overlay
     public void Player_Open()
     {
-        Debug.Log("Player_Opened");
-        b_playerOpen = true;
-        if (b_chatOpen)
-            b_chatOpen = false;
-        if (b_mapOpen)
-            b_mapOpen = false;
+        Map.SetActive(false);
+        Player.SetActive(true);
+        Chat.SetActive(false);
+
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(false);
+
+        Shop.SetActive(false);
+        Community.SetActive(false);
+        Quest.SetActive(false);
+        Setting.SetActive(false);
     }
     public void Player_Close()
     {
-        Debug.Log("Player_Closed");
-        b_playerOpen = false;
+        Player.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 
     //Chat Overlay
     public void Chat_Toggle()
     {
-        Debug.Log("Chat_Toggled");
-        b_chatOpen = !b_chatOpen;
+        if (!Chat.activeSelf)
+        {
+            Map.SetActive(false);
+            Player.SetActive(false);
+            Chat.SetActive(true);
+
+            //Extended Menu
+            ExtendMenu.SetActive(false);
+            ExtendButton.SetActive(false);
+
+            Shop.SetActive(false);
+            Community.SetActive(false);
+            Quest.SetActive(false);
+            Setting.SetActive(false);
+        }
+        else
+        {
+            Chat.SetActive(false);
+        }
     }
-    
+
     //Extended Menu
     public void ExtendedMenu_Open()
     {
-        Debug.Log("ExtendedMenu_Opened");
-        b_extendedMenu = true;
-        b_extendedButton = false;
+        ExtendMenu.SetActive(true);
+        ExtendButton.SetActive(false);
     }
     public void ExtendedMenu_Close()
     {
-        Debug.Log("ExtendedMenu_Closed");
-        b_extendedMenu = false;
-        b_extendedButton = true;
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 
     //Cash Shop
     public void Shop_Open()
     {
-        Debug.Log("Shop_Opened");
-        b_shopOpen = true;
+        Map.SetActive(false);
+        Player.SetActive(false);
+        Chat.SetActive(false);
+
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(false);
+
+        Shop.SetActive(true);
+        Community.SetActive(false);
+        Quest.SetActive(false);
+        Setting.SetActive(false);
     }
     public void Shop_Close()
     {
-        Debug.Log("Shop_Closed");
-        b_shopOpen = false;
+        Shop.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 
     //Community
     public void Community_Open()
     {
-        Debug.Log("Community_Opened");
-        b_communityOpen = true;
+        Map.SetActive(false);
+        Player.SetActive(false);
+        Chat.SetActive(false);
+
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(false);
+
+        Shop.SetActive(false);
+        Community.SetActive(true);
+        Quest.SetActive(false);
+        Setting.SetActive(false);
     }
     public void Community_Close()
     {
-        Debug.Log("Community_Closed");
-        b_communityOpen = false;
+        Community.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 
     //Quest
     public void Quest_Open()
     {
-        Debug.Log("Quest_Opened");
-        b_questOpen = true;
+        Map.SetActive(false);
+        Player.SetActive(false);
+        Chat.SetActive(false);
+
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(false);
+
+        Shop.SetActive(false);
+        Community.SetActive(false);
+        Quest.SetActive(true);
+        Setting.SetActive(false);
     }
     public void Quest_Close()
     {
-        Debug.Log("Quest_Closed");
-        b_questOpen = false;
+        Quest.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 
     //Setting
     public void Setting_Open()
     {
-        Debug.Log("Setting_Opened");
-        b_settingOpen = true;
+        Map.SetActive(false);
+        Player.SetActive(false);
+        Chat.SetActive(false);
+
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(false);
+
+        Shop.SetActive(false);
+        Community.SetActive(false);
+        Quest.SetActive(false);
+        Setting.SetActive(true);
     }
     public void Setting_Close()
     {
-        Debug.Log("Setting_Closed");
-        b_settingOpen = false;
+        Setting.SetActive(false);
+        ExtendButton.SetActive(true);
     }
 }
