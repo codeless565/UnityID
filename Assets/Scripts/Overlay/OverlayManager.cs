@@ -31,7 +31,19 @@ public class OverlayManager : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
- 
+        Map.SetActive(false);
+        Player.SetActive(false);
+        Chat.SetActive(false);
+
+        //Extended Menu
+        ExtendMenu.SetActive(false);
+        ExtendButton.SetActive(true);
+
+        Shop.SetActive(false);
+        Community.SetActive(false);
+        Quest.SetActive(false);
+        Setting.SetActive(false);
+
     }
 
     // Update is called once per frame

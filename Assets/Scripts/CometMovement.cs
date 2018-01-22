@@ -11,8 +11,8 @@ public class CometMovement : MonoBehaviour {
     [SerializeField]
     ParticleSystem EndEffects;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -24,14 +24,16 @@ public class CometMovement : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
 
-        Health healthscript = other.GetComponent<Health>();
+        GOStats statsScript = other.GetComponent<GOStats>();
 
-        if (healthscript != null)
+        if (statsScript != null)
         {
             ParticleSystem thisExplosion = Instantiate(EndEffects, transform.position, Quaternion.identity);
             thisExplosion.Play();
 
-            healthscript.AddHealth(-CometDMG);
+            statsScript.AddHealth(-CometDMG);
+            if (statsScript.GetHP() <= 0)
+                GameObject.FindGameObjectWithTag("Player").GetComponent<GOStats>().AddEXP(10);
         }
 
         Destroy(gameObject);

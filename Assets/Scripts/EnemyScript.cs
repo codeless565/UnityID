@@ -17,14 +17,4 @@ public class EnemyScript : MonoBehaviour
     {
 		
 	}
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name.Contains("Bullet"))
-        {
-            Health healthScript = GetComponent<Health>();
-            healthScript.AddHealth(-1f);
-            Destroy(other.gameObject);
-        }
-    }
 }

@@ -124,20 +124,20 @@ public class SkillControl : MonoBehaviour
     //Skill Activation
     private void SkillCall_Up()
     {
-        if (Player.GetComponent<PlayerMana>().mp < SkillFirst.GetComponent<SkillBase>().GetCost())
+        if (Player.GetComponent<GOStats>().GetMP() < SkillFirst.GetComponent<SkillBase>().GetCost())
             return;
 
         SkillFirst.GetComponent<SkillBase>().SkillCall();
-        Player.GetComponent<PlayerMana>().mp -= SkillFirst.GetComponent<SkillBase>().GetCost();
+        Player.GetComponent<GOStats>().AddMP(-SkillFirst.GetComponent<SkillBase>().GetCost());
     }
 
     private void SkillCall_Right()
     {
-        if (Player.GetComponent<PlayerMana>().mp < SkillSecond.GetComponent<SkillBase>().GetCost())
+        if (Player.GetComponent<GOStats>().GetMP() < SkillSecond.GetComponent<SkillBase>().GetCost())
             return;
 
         SkillSecond.GetComponent<SkillBase>().SkillCall();
-        Player.GetComponent<PlayerMana>().mp -= SkillSecond.GetComponent<SkillBase>().GetCost();
+        Player.GetComponent<GOStats>().AddMP(-SkillSecond.GetComponent<SkillBase>().GetCost());
     }
 
     private void SkillCall_Down()
