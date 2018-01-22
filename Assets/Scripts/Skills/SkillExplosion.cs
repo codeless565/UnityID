@@ -21,4 +21,10 @@ public class SkillExplosion : MonoBehaviour, SkillBase
     {
        Instantiate(Explosion, transform.position, transform.rotation);
     }
+
+    float SkillBase.GetCost()
+    {
+        return 5;
+    }
+
 }

@@ -24,4 +24,9 @@ public class SkillComet : MonoBehaviour, SkillBase
         Instantiate(Comet, newPos, transform.rotation);
     }
 
+    float SkillBase.GetCost()
+    {
+        return 20;
+    }
+
 }

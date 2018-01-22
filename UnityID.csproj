@@ -96,6 +96,9 @@
     <Compile Include="Assets\Scripts\Overlay\Overlay_Map.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Options.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerHPHUD.cs" />
+    <Compile Include="Assets\Scripts\PlayerMPHUD.cs" />
+    <Compile Include="Assets\Scripts\PlayerMana.cs" />
     <Compile Include="Assets\Scripts\PrefabHolder.cs" />
     <Compile Include="Assets\Scripts\Quest.cs" />
     <Compile Include="Assets\Scripts\SceneTransition\AccountInfoSceneTransit.cs" />

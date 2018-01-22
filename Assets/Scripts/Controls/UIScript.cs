@@ -10,7 +10,6 @@ public class UIScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        printout.text = "Started";
 
     }
 

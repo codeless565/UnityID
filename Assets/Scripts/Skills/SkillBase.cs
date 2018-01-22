@@ -5,4 +5,5 @@ using UnityEngine;
 public interface SkillBase{
 
     void SkillCall();
+    float GetCost();
 }
