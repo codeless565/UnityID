@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Controls\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Controls\SkillControl.cs" />
     <Compile Include="Assets\Scripts\Controls\UIScript.cs" />
+    <Compile Include="Assets\Scripts\CreateCharacter.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\EnemySpawn.cs" />
     <Compile Include="Assets\Scripts\EnemySpeed.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Scripts\Overlay\Overlay_Map.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Options.cs" />
     <Compile Include="Assets\Scripts\Overlay\Overlay_Player.cs" />
+    <Compile Include="Assets\Scripts\Overlay\Overlay_Shop.cs" />
     <Compile Include="Assets\Scripts\PrefabHolder.cs" />
     <Compile Include="Assets\Scripts\Quest.cs" />
     <Compile Include="Assets\Scripts\SceneTransition\AccountInfoSceneTransit.cs" />
