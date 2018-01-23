@@ -36,6 +36,8 @@ public class GOStats : MonoBehaviour
     public Text STR_DISPLAY;
     public Text AGI_DISPLAY;
     public Text INT_DISPLAY;
+    public Text HP_HUD;
+    public Text MP_HUD;
 
     //HUD - Player only
     public Slider HPBAR;
@@ -122,6 +124,9 @@ public class GOStats : MonoBehaviour
         HPBAR.value = CalculatePercentage(hp, maxHP);
         MPBAR.value = CalculatePercentage(mp, maxMP);
         EXPBAR.value = CalculatePercentage(exp, expCAP);
+
+        HP_HUD.text = (CalculatePercentage(hp, maxHP) * 100).ToString("0") + "%";
+        MP_HUD.text = (CalculatePercentage(mp, maxMP) * 100).ToString("0") + "%";
     }
 
     //Health
