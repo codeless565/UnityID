@@ -24,6 +24,10 @@ public class Overlay_Communications : MonoBehaviour {
     [SerializeField]
     GameObject BuddyOffline;
     [SerializeField]
+    GameObject PartyOnline;
+    [SerializeField]
+    GameObject PartyOffline;
+    [SerializeField]
     GameObject GuildOnline;
     [SerializeField]
     GameObject GuildOffline;
@@ -31,10 +35,14 @@ public class Overlay_Communications : MonoBehaviour {
     [SerializeField]
     Dropdown BuddyStatus;
     [SerializeField]
+    Dropdown PartyStatus;
+    [SerializeField]
     Dropdown GuildStatus;
 
     [SerializeField]
     GameObject BuddyAdd;
+    [SerializeField]
+    GameObject PartyAdd;
     [SerializeField]
     GameObject GuildAdd;
 
@@ -44,10 +52,13 @@ public class Overlay_Communications : MonoBehaviour {
 
     bool b_buddyonlineOpen;
     bool b_buddyofflineOpen;
+    bool b_partyonlineOpen;
+    bool b_partyofflineOpen;
     bool b_guildonlineOpen;
     bool b_guildofflineOpen;
 
     bool b_buddyaddOpen;
+    bool b_partyaddOpen;
     bool b_guildaddOpen;
 
     public Color ButtonActiveColour = Color.red;
@@ -62,9 +73,13 @@ public class Overlay_Communications : MonoBehaviour {
 
         b_buddyonlineOpen = true;
         b_buddyofflineOpen = false;
+        b_partyonlineOpen = true;
+        b_partyofflineOpen = false;
         b_guildonlineOpen = true;
         b_guildofflineOpen = false;
+
         b_buddyaddOpen = false;
+        b_partyaddOpen = false;
         b_guildaddOpen = false;
 
         BuddyButton.GetComponent<Image>().color = ButtonActiveColour;
@@ -80,10 +95,13 @@ public class Overlay_Communications : MonoBehaviour {
         Guild.SetActive(b_guildOpen);
         BuddyOnline.SetActive(b_buddyonlineOpen);
         BuddyOffline.SetActive(b_buddyofflineOpen);
+        PartyOnline.SetActive(b_partyonlineOpen);
+        PartyOffline.SetActive(b_partyofflineOpen);
         GuildOnline.SetActive(b_guildonlineOpen);
         GuildOffline.SetActive(b_guildofflineOpen);
 
         BuddyAdd.SetActive(b_buddyaddOpen);
+        PartyAdd.SetActive(b_partyaddOpen);
         GuildAdd.SetActive(b_guildaddOpen);
 
         if (b_buddyOpen)
@@ -130,6 +148,21 @@ public class Overlay_Communications : MonoBehaviour {
             BuddyOffline_Open();
         }
     }
+    public void ChangePartyPanel()
+    {
+        int CurrentlySelectedValue = PartyStatus.value;
+        if (CurrentlySelectedValue == 0)
+        {
+            PartyOffline_Close();
+            PartyOnline_Open();
+        }
+        else if (CurrentlySelectedValue == 1)
+        {
+            PartyOnline_Close();
+            PartyOffline_Open();
+        }
+    }
+
     //Buddy
     public void Buddy_Open()
     {
@@ -139,6 +172,7 @@ public class Overlay_Communications : MonoBehaviour {
         b_guildOpen = false;
 
         b_buddyonlineOpen = true;
+        b_buddyaddOpen = false;
     }
     public void Buddy_Close()
     {
@@ -169,6 +203,7 @@ public class Overlay_Communications : MonoBehaviour {
         b_partyOpen = false;
 
         b_guildonlineOpen = true;
+        b_guildaddOpen = false;
     }
     public void Guild_Close()
     {
@@ -198,6 +233,30 @@ public class Overlay_Communications : MonoBehaviour {
     {
         Debug.Log("BuddyOffline_Closed");
         b_buddyofflineOpen = false;
+    }
+
+    //partyOnline
+    public void PartyOnline_Open()
+    {
+        Debug.Log("partyOnline_Opened");
+        b_partyonlineOpen = true;
+    }
+    public void PartyOnline_Close()
+    {
+        Debug.Log("partyOnline_Closed");
+        b_partyonlineOpen = false;
+    }
+
+    //partyOffline
+    public void PartyOffline_Open()
+    {
+        Debug.Log("partyOffline_Opened");
+        b_partyofflineOpen = true;
+    }
+    public void PartyOffline_Close()
+    {
+        Debug.Log("partyOffline_Closed");
+        b_partyofflineOpen = false;
     }
 
     //GuildOffline
@@ -235,6 +294,20 @@ public class Overlay_Communications : MonoBehaviour {
         Debug.Log("BuddyAdd_Closed");
         b_buddyaddOpen = false;
     }
+
+    //partyAdd
+    public void PartyAdd_Open()
+    {
+        Debug.Log("partyAdd_Opened");
+        b_partyaddOpen = true;
+    }
+    public void PartyAdd_Close()
+    {
+        Debug.Log("partyAdd_Closed");
+        b_partyaddOpen = false;
+    }
+
+
 
     //GuildAdd
     public void GuildAdd_Open()
