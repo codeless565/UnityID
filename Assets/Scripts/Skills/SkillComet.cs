@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillComet : MonoBehaviour, SkillBase
 {
-    public GameObject Comet;
+    [SerializeField]
+    GameObject Comet;
+
+    [SerializeField]
+    Sprite SkillIcon;
+
+    //Variables
+    int currLevel = 0;
 
     // Use this for initialization
-    void Awake() {
-      
-        Comet = GameObject.Find("Player").GetComponentInChildren<PrefabHolder>().CometSkill;
+    void Start()
+    {  
+        currLevel = 0;
     }
 
     // Update is called once per frame
@@ -19,14 +27,51 @@ public class SkillComet : MonoBehaviour, SkillBase
 
     void SkillBase.SkillCall()
     {
-        Vector3 newPos = new Vector3(transform.position.x, transform.position.y + 20, transform.position.z);
-         
-        Instantiate(Comet, newPos, transform.rotation);
+        Vector3 CometSpawnpt = GameObject.FindGameObjectWithTag("CometSpawn").transform.position;
+
+        Instantiate(Comet, CometSpawnpt, transform.rotation);
     }
 
-    float SkillBase.GetCost()
+    public float GetManaCost()
     {
-        return 20;
+        return currLevel * 5 + 10;
     }
 
+    public float GetDamage()
+    {
+        return currLevel * 20;
+    }
+
+    public int GetLevel()
+    {
+        return currLevel;
+    }
+
+    public int GetRankupCost()
+    {
+        if (currLevel <= 0)
+            return 3;
+        else
+            return 1;
+    }
+
+    public string GetDescription()
+    {
+        return "Calls down a giant meteor from the sky to destroy any enemy infront of the caster.\n";
+    }
+
+    public void RankUp()
+    {
+        ++currLevel;
+    }
+
+    public Sprite GetSkillImage()
+    {
+        return SkillIcon;
+    }
+
+    public string GetName()
+    {
+        return "Comet";
+    }
 }

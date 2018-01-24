@@ -17,8 +17,10 @@ public class SkillControl : MonoBehaviour
     [SerializeField]
     GameObject NormalAttackGameObject;
     
-    public GameObject SkillFirst;
-    public GameObject SkillSecond;
+    SkillBase SkillFirst;
+    SkillBase SkillSecond;
+    SkillBase SkillThird;
+    SkillBase SkillFourth;
 
 
     private Image skillBG;
@@ -36,8 +38,10 @@ public class SkillControl : MonoBehaviour
         skillFG = SkillControllerObj.transform.GetChild(0).GetComponent<Image>();
 
         //Add skill
-        SkillFirst.AddComponent<SkillExplosion>();
-        SkillSecond.AddComponent<SkillComet>();
+        SkillFirst = null;
+        SkillSecond = null;
+        SkillThird = null;
+        SkillFourth = null;
 
         startPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1);
     }
@@ -124,28 +128,66 @@ public class SkillControl : MonoBehaviour
     //Skill Activation
     private void SkillCall_Up()
     {
-        if (Player.GetComponent<GOStats>().GetMP() < SkillFirst.GetComponent<SkillBase>().GetCost())
+        if (SkillFirst == null)
+            return;
+        if (Player.GetComponent<GOStats>().GetMP() < SkillFirst.GetManaCost())
             return;
 
-        SkillFirst.GetComponent<SkillBase>().SkillCall();
-        Player.GetComponent<GOStats>().AddMP(-SkillFirst.GetComponent<SkillBase>().GetCost());
+        SkillFirst.SkillCall();
+        Player.GetComponent<GOStats>().AddMP(-SkillFirst.GetManaCost());
     }
 
     private void SkillCall_Right()
     {
-        if (Player.GetComponent<GOStats>().GetMP() < SkillSecond.GetComponent<SkillBase>().GetCost())
+        if (SkillSecond == null)
+            return;
+        if (Player.GetComponent<GOStats>().GetMP() < SkillSecond.GetManaCost())
             return;
 
-        SkillSecond.GetComponent<SkillBase>().SkillCall();
-        Player.GetComponent<GOStats>().AddMP(-SkillSecond.GetComponent<SkillBase>().GetCost());
+        SkillSecond.SkillCall();
+        Player.GetComponent<GOStats>().AddMP(-SkillSecond.GetManaCost());
     }
 
     private void SkillCall_Down()
     {
+        if (SkillThird == null)
+            return;
+        if (Player.GetComponent<GOStats>().GetMP() < SkillThird.GetManaCost())
+            return;
+
+        SkillThird.SkillCall();
+        Player.GetComponent<GOStats>().AddMP(-SkillThird.GetManaCost());
     }
 
     private void SkillCall_Left()
     {
+        if (SkillFourth == null)
+            return;
+        if (Player.GetComponent<GOStats>().GetMP() < SkillFourth.GetManaCost())
+            return;
+
+        SkillFourth.SkillCall();
+        Player.GetComponent<GOStats>().AddMP(-SkillFourth.GetManaCost());
     }
 
+    //Skill Loadout
+    public void SetSkillTop(SkillBase newSkill)
+    {
+        SkillFirst = newSkill;
+    }
+
+    public void SetSkillRight(SkillBase newSkill)
+    {
+        SkillSecond = newSkill;
+    }
+
+    public void SetSkillBottom(SkillBase newSkill)
+    {
+        SkillThird = newSkill;
+    }
+
+    public void SetSkillLeft(SkillBase newSkill)
+    {
+        SkillFourth = newSkill;
+    }
 }

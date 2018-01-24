@@ -2,14 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillExplosion : MonoBehaviour, SkillBase
 {
-    public GameObject Explosion;
+    [SerializeField]
+    GameObject Explosion;
+
+    [SerializeField]
+    Sprite SkillIcon;
+
+    //Variables
+    int currLevel;
 
     // Use this for initialization
-    void Awake () {
-        Explosion = GameObject.Find("Player").GetComponentInChildren<PrefabHolder>().ExplosionSkill;
+    void Start() {
+        currLevel = 0;
     }
 
     // Update is called once per frame
@@ -22,9 +30,47 @@ public class SkillExplosion : MonoBehaviour, SkillBase
        Instantiate(Explosion, transform.position, transform.rotation);
     }
 
-    float SkillBase.GetCost()
+    public float GetManaCost()
     {
-        return 5;
+        return currLevel * 5;
+    }
+
+    public float GetDamage()
+    {
+        return 0;
+    }
+
+    public int GetLevel()
+    {
+        return currLevel;
+    }
+
+    public int GetRankupCost()
+    {
+        if (currLevel <= 0)
+            return 3;
+        else
+            return 1;
+    }
+
+    public string GetDescription()
+    {
+        return "Generates a quick flash to ward off enemies for a brief period of time.\n";
+    }
+
+    public void RankUp()
+    {
+        ++currLevel;
+    }
+
+    public Sprite GetSkillImage()
+    {
+        return SkillIcon;
+    }
+
+    public string GetName()
+    {
+        return "Flare";
     }
 
 }

@@ -22,6 +22,8 @@ public class GOStats : MonoBehaviour
     int AGI;
     int INT;
 
+    int SkillPoints;
+
     //Buttons - Player only
     public GameObject STRButton;
     public GameObject AGIButton;
@@ -60,6 +62,7 @@ public class GOStats : MonoBehaviour
         //Preset Stats by Level
         expCAP = Level * 10;
         Statspoints = Level * 10;
+        SkillPoints = Level * 3;
     }
 
     // Update is called once per frame
@@ -92,6 +95,7 @@ public class GOStats : MonoBehaviour
             Statspoints += 10;
             maxHP += Level * 10 + Level;
             maxMP += Level * 10 + Level * 2;
+            SkillPoints += 3;
 
             hp = maxHP;
             mp = maxMP;
@@ -129,7 +133,7 @@ public class GOStats : MonoBehaviour
         MP_HUD.text = (CalculatePercentage(mp, maxMP) * 100).ToString("0") + "%";
     }
 
-    //Health
+    //Editor
     public void AddHealth(float amt)
     {
         hp += amt;
@@ -146,6 +150,11 @@ public class GOStats : MonoBehaviour
     public void AddEXP(int amt)
     {
         exp += amt;
+    }
+
+    public void DeductSkillPoints(int amt)
+    {
+        SkillPoints -= amt;
     }
 
 
@@ -191,6 +200,9 @@ public class GOStats : MonoBehaviour
 
     public float GetMaxMP()
     { return maxMP; }
+
+    public float GetSkillPoints()
+    { return SkillPoints; }
 
 
     //Helper
