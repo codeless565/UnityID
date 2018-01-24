@@ -20,7 +20,7 @@ public class SelectCharacterSceneTransition : MonoBehaviour
     {
         SceneManager.LoadScene("AccountInfo");
     }
-    public void ToCreate() { Debug.Log("To Create"); }
+    public void ToCreate() { SceneManager.LoadScene("CreateCharacter"); }
     public void ToDelete() { Debug.Log("To Delete"); }
     public void ToPlay()
     {
