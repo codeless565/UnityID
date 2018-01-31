@@ -108,8 +108,8 @@
     <Compile Include="Assets\Scripts\SceneTransition\AccountInfoSceneTransit.cs" />
     <Compile Include="Assets\Scripts\SceneTransition\CreateCharacterSceneTransition.cs" />
     <Compile Include="Assets\Scripts\SceneTransition\LoginSceneTransit.cs" />
-    <Compile Include="Assets\Scripts\SceneTransition\SceneTransit.cs" />
     <Compile Include="Assets\Scripts\SceneTransition\SelectCharacterSceneTransition.cs" />
+    <Compile Include="Assets\Scripts\SceneTransition\UIScript16.cs" />
     <Compile Include="Assets\Scripts\Skills\PrefabHolder.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillBase.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillComet.cs" />
